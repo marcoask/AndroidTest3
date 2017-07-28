@@ -4,8 +4,13 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_test_contacts">TestContacts</string>
     <string name="title_activity_addition">AdditionActivity</string>
-    <string name="table_layout_4_open">table_layout_4_open</string>
-    <string name="table_layout_4_open_shortcut">table_layout_4_open_shortcut</string>
-    <string name="table_layout_4_save">table_layout_4_save</string>
-    <string name="table_layout_4_save_shortcut">table_layout_4_save_shortcut</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="luogo">luogo</string>
+    <string name="presenze">presenze (peso)</string>
+    <string name="coordinate">coord. NS/EW</string>
 </resources>

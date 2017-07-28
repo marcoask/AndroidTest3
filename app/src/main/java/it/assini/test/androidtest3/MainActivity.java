@@ -57,4 +57,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /** Called when the user taps the button */
+    public void openTable(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, TableActivity.class);
+        //EditText editText = (EditText) findViewById(R.id.);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
 }

@@ -79,7 +79,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnCalcola"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView3"
@@ -92,7 +92,7 @@
             android:id="@+id/txtNumber2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/btnAdd"
+            android:layout_above="@+id/btnCalcola"
             android:layout_alignLeft="@+id/txtNumber1"
             android:ems="2"
             android:inputType="number" />
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/txtNumber2"
-            android:layout_alignTop="@+id/btnAdd"
+            android:layout_alignTop="@+id/btnCalcola"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </RelativeLayout>

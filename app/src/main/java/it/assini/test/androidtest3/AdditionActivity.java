@@ -36,11 +36,10 @@ public class AdditionActivity extends AppCompatActivity {
             }
         });
 
-
         firstNumber = (EditText)findViewById(R.id.txtNumber1);
         secondNumber = (EditText)findViewById(R.id.txtNumber2);
         addResult = (TextView)findViewById(R.id.txtResult);
-        btnAdd = (Button)findViewById(R.id.btnAdd);
+        btnAdd = (Button)findViewById(R.id.btnCalcola);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
