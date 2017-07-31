@@ -16,7 +16,7 @@
             android:text="@string/luogo" />
 
         <TextView
-            android:gravity="right"
+            android:gravity="end"
             android:padding="3dip"
             android:text="@string/presenze" />
 
@@ -31,18 +31,14 @@
             android:padding="3dip" />
 
         <EditText
-            android:id="@+id/peso1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_alignRight="@+id/textView1"
             android:ems="2"
             android:inputType="number"
-            android:text="5"/>
+            android:text="@string/_5"/>
 
 
         <EditText
-            android:id="@+id/txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"

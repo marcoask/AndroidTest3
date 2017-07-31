@@ -13,4 +13,5 @@
     <string name="luogo">luogo</string>
     <string name="presenze">presenze (peso)</string>
     <string name="coordinate">coord. NS/EW</string>
+    <string name="_5">5</string>
 </resources>
