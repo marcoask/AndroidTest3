@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="2">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/luogo" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="@string/presenze" />
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/coordinate" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/A"
+            android:padding="3dip" />
+
+        <EditText
+            android:id="@+id/peso1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/textView1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="5"/>
+
+
+        <EditText
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/textView1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="45°30'22.4&quot;N 10°19'52.5&quot;E"
+            android:textSize="12sp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/B"
+            android:padding="3dip" />
+
+        <EditText
+            android:id="@+id/peso2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnCalcola"
+            android:layout_alignLeft="@+id/txtNumber1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="3"/>
+
+        <EditText
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/textView1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="45°32'25.1&quot;N 10°19'02.5&quot;E"
+            android:textSize="12sp" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/C"
+            android:padding="3dip" />
+
+        <EditText
+            android:id="@+id/peso3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnCalcola"
+            android:layout_alignLeft="@+id/txtNumber1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="3"/>
+
+        <EditText
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignRight="@+id/textView1"
+            android:ems="2"
+            android:inputType="number"
+            android:text="45°31'50.0&quot;N 10°15'30.1&quot;E"
+            android:textSize="12sp" />
+
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/btnCalcola"
+
+            android:text="Calcola" />
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/txtNumber2"
+            android:layout_alignTop="@+id/btnCalcola"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+</TableLayout>
