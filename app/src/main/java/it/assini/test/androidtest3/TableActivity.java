@@ -1,6 +1,7 @@
 package it.assini.test.androidtest3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,8 +27,10 @@ public class TableActivity extends AppCompatActivity {
     TableLayout tl;
 
     //double peso1_double, txt1_double, peso2_double, txt2_double,sum;
-    String txt1_string, txt2_string;
+    //String txt1_string, txt2_string;
     String result;
+
+    ArrayList<String> latLngArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,11 @@ public class TableActivity extends AppCompatActivity {
                     decEW_sommatoria = decEW_sommatoria + (NSEWtoDec(txtArray.get(k), "E")*Double.parseDouble(pesoArray.get(k)));
                 }
 
+
+                latLngArrayList.add("45.50622222, 10.33125");
+                latLngArrayList.add("45.54030556, 10.31736");
+
+
                 //double txt1_decNS = NSEWtoDec(txt1_string, "N");
                 //double txt1_decEW = NSEWtoDec(txt1_string, "E");
 
@@ -107,7 +115,6 @@ public class TableActivity extends AppCompatActivity {
                 int duration = Toast.LENGTH_LONG;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
-
 
             }
         });
@@ -163,6 +170,20 @@ public class TableActivity extends AppCompatActivity {
         value = value * factor;
         long tmp = Math.round(value);
         return (double) tmp / factor;
+    }
+
+    /** Called when the user taps the button */
+    public void openMapsWithPoints(View view) {
+
+        Intent intent=new Intent(this, MapsActivity.class);
+
+        Bundle b=new Bundle();
+        b.putStringArray("ARRAY", latLngArrayList.toArray(new String[latLngArrayList.size()]));
+        intent.putExtras(b);
+
+        intent.putExtra("POINTS", "Test Extra");
+
+        startActivity(intent);
     }
 
     public static void main (String[] args ) {

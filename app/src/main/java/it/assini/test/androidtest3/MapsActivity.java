@@ -1,7 +1,8 @@
 package it.assini.test.androidtest3;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,11 +39,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        //LatLng sydney = new LatLng(-34, 151);
         LatLng casaVirle = new LatLng(45.50622222, 10.33125);
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(casaVirle).title("Marker in Casa Virle"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(casaVirle));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mapPointCamera(casaVirle);
+    }
+
+    private void mapPointCamera(LatLng casaVirle) {
+        //mMap.addMarker(new MarkerOptions().position(casaVirle).title("Marker in Casa Virle"));
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String test = getIntent().getStringExtra("POINTS");
+            //mMap.addMarker(new MarkerOptions().position(casaVirle).title(test));
+
+            String[] array=extras.getStringArray("ARRAY");
+            Log.d("MapsActivity", ""+array.length);
+            for (int i = 0; i<array.length; i++){
+                Log.d("MapsActivity", "["+array[i]+"]");
+                double lat = Double.parseDouble(array[i].split(",")[0]);
+                double lng = Double.parseDouble(array[i].split(",")[1]);
+                mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lng)).title(test));
+            }
+
+
+        }
+
+
+
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(casaVirle, 20.0f)); //12.0f città, 24.0f via
+
     }
 }
