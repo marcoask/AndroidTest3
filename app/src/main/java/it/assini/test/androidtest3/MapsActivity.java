@@ -39,33 +39,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng casaVirle = new LatLng(45.50622222, 10.33125);
+        //LatLng casaVirle = new LatLng(45.50622222, 10.33125);
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        mapPointCamera(casaVirle);
+        mapPointCamera();
     }
 
-    private void mapPointCamera(LatLng casaVirle) {
+    private void mapPointCamera() {
         //mMap.addMarker(new MarkerOptions().position(casaVirle).title("Marker in Casa Virle"));
         Bundle extras = getIntent().getExtras();
+        Log.d("MapsActivity", "extras.toString():"+extras.toString());
         if (extras != null) {
-            String test = getIntent().getStringExtra("POINTS");
-            //mMap.addMarker(new MarkerOptions().position(casaVirle).title(test));
 
-            String[] array=extras.getStringArray("ARRAY");
-            Log.d("MapsActivity", ""+array.length);
-            for (int i = 0; i<array.length; i++){
-                Log.d("MapsActivity", "["+array[i]+"]");
-                double lat = Double.parseDouble(array[i].split(",")[0]);
-                double lng = Double.parseDouble(array[i].split(",")[1]);
-                mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lng)).title(test));
+            String risultato = getIntent().getStringExtra("RISULTATO");
+            LatLng latLngRisultato = string2Latlng(risultato);
+            mMap.addMarker(new MarkerOptions().position(latLngRisultato).title("Risultato"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLngRisultato, 16.0f)); //12.0f città, 24.0f via
+
+            String[] latlngArray=extras.getStringArray("LATLNGARRAY");
+            Log.d("MapsActivity", "array.length:"+latlngArray.length);
+            String[] etichetteArray=extras.getStringArray("ETICHETTEARRAY");
+            for (int i = 0; i<latlngArray.length; i++){
+                Log.d("MapsActivity", "array:["+latlngArray[i]+"]");
+                mMap.addMarker(new MarkerOptions().position(string2Latlng(latlngArray[i])).title(etichetteArray[i]));
+
             }
-
 
         }
 
+    }
 
-
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(casaVirle, 20.0f)); //12.0f città, 24.0f via
-
+    private LatLng string2Latlng(String stringa) {
+        LatLng latLng;
+        double lat = Double.parseDouble(stringa.split(",")[0]);
+        double lng = Double.parseDouble(stringa.split(",")[1]);
+        return (latLng = new LatLng(lat,lng));
     }
 }
+
+//TODO: colore del risultato
+//TODO: indicazioni stradali tra punti e risultato

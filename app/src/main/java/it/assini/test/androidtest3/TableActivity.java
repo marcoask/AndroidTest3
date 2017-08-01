@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,9 @@ public class TableActivity extends AppCompatActivity {
     String result;
 
     ArrayList<String> latLngArrayList = new ArrayList<>();
+    ArrayList<String> nomiArrayList = new ArrayList<>();
+    double decNS_pesato;
+    double decEW_pesato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,12 @@ public class TableActivity extends AppCompatActivity {
                 int rowCount = tl.getChildCount();
                 int columCount = ((TableRow)tl.getChildAt(1)).getChildCount();
 
+                ArrayList<String> luoghiArray = new ArrayList<>();
+                for (int i = 1; i < rowCount-1; i++) {
+                    TextView tw = (TextView)((TableRow)tl.getChildAt(i)).getChildAt(0);
+                    luoghiArray.add(tw.getText().toString());
+                }
+
                 ArrayList<String> pesoArray = new ArrayList<>();
                 for (int i = 1; i < rowCount-1; i++) {
                         EditText et = (EditText)((TableRow)tl.getChildAt(i)).getChildAt(1);
@@ -86,11 +96,17 @@ public class TableActivity extends AppCompatActivity {
                 for (int k = 0; k<txtArray.size(); k++){
                     decNS_sommatoria = decNS_sommatoria + (NSEWtoDec(txtArray.get(k), "N")*Double.parseDouble(pesoArray.get(k)));
                     decEW_sommatoria = decEW_sommatoria + (NSEWtoDec(txtArray.get(k), "E")*Double.parseDouble(pesoArray.get(k)));
+
+                    if(Double.parseDouble(pesoArray.get(k))>0){
+                        latLngArrayList.add(NSEWtoDec(txtArray.get(k), "N")+", "+NSEWtoDec(txtArray.get(k), "E"));
+                        nomiArrayList.add(luoghiArray.get(k));
+                    }
+
                 }
 
 
-                latLngArrayList.add("45.50622222, 10.33125");
-                latLngArrayList.add("45.54030556, 10.31736");
+                //latLngArrayList.add("45.50622222, 10.33125");
+                //latLngArrayList.add("45.54030556, 10.31736");
 
 
                 //double txt1_decNS = NSEWtoDec(txt1_string, "N");
@@ -102,8 +118,8 @@ public class TableActivity extends AppCompatActivity {
                 //double decNS_pesato = (txt1_decNS*peso1_double + txt2_decNS*peso2_double)/(pesiSommatoria);
                 //double decEW_pesato = (txt1_decEW*peso1_double + txt2_decEW*peso2_double)/(pesiSommatoria);
 
-                double decNS_pesato = decNS_sommatoria/(pesiSommatoria);
-                double decEW_pesato = decEW_sommatoria/(pesiSommatoria);
+                decNS_pesato = decNS_sommatoria/(pesiSommatoria);
+                decEW_pesato = decEW_sommatoria/(pesiSommatoria);
 
                 result = DectoNSEW(decNS_pesato,"N") +" " + DectoNSEW(decEW_pesato,"E");
                 
@@ -178,10 +194,12 @@ public class TableActivity extends AppCompatActivity {
         Intent intent=new Intent(this, MapsActivity.class);
 
         Bundle b=new Bundle();
-        b.putStringArray("ARRAY", latLngArrayList.toArray(new String[latLngArrayList.size()]));
+        Log.d(this.getClass().getName(), "latLngArrayList:"+latLngArrayList.size());
+        b.putStringArray("LATLNGARRAY", latLngArrayList.toArray(new String[latLngArrayList.size()]));
+        b.putStringArray("ETICHETTEARRAY", nomiArrayList.toArray(new String[nomiArrayList.size()]));
         intent.putExtras(b);
 
-        intent.putExtra("POINTS", "Test Extra");
+        intent.putExtra("RISULTATO", decNS_pesato+", "+decEW_pesato);
 
         startActivity(intent);
     }
