@@ -63,7 +63,8 @@
             android:layout_alignBottom="@+id/textView2"
             android:layout_alignRight="@+id/textView1"
             android:ems="2"
-            android:inputType="number" >
+            android:inputType="number"
+            android:labelFor="@string/addendo">
 
             <requestFocus />
         </EditText>
@@ -95,7 +96,8 @@
             android:layout_above="@+id/btnCalcola"
             android:layout_alignLeft="@+id/txtNumber1"
             android:ems="2"
-            android:inputType="number" />
+            android:inputType="number"
+            android:labelFor="@string/addendo"/>
 
         <TextView
             android:id="@+id/txtResult"

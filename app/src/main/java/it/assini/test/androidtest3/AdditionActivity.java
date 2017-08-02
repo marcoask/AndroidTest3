@@ -12,12 +12,14 @@ import android.widget.TextView;
 
 public class AdditionActivity extends AppCompatActivity {
 
-    EditText firstNumber;
-    EditText secondNumber;
-    TextView addResult;
-    Button btnAdd;
+    private EditText firstNumber;
+    private EditText secondNumber;
+    private TextView addResult;
+    private Button btnAdd;
 
-    double num1,num2,sum;
+    private double num1;
+    private double num2;
+    private double sum;
 
 
     @Override

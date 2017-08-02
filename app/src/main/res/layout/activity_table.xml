@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,7 +28,7 @@
 
     <TableRow>
         <TextView
-            android:text="@string/A"
+            android:text="@string/Falcone"
             android:padding="3dip" />
 
         <EditText
@@ -35,7 +36,9 @@
             android:layout_height="wrap_content"
             android:ems="2"
             android:inputType="number"
-            android:text="@string/_5"/>
+            android:text="@string/_2"
+            android:labelFor="@string/_2"
+            tools:ignore="LabelFor" />
 
 
         <EditText
@@ -45,13 +48,14 @@
             android:layout_alignRight="@+id/textView1"
             android:ems="2"
             android:inputType="number"
-            android:text="45°30'22.4&quot;N 10°19'52.5&quot;E"
-            android:textSize="12sp" />
+            android:text="45°30'27.7&quot;N 10°19'18.0&quot;E"
+            android:textSize="12sp"
+            android:labelFor="@string/coordinate"/>
     </TableRow>
 
     <TableRow>
         <TextView
-            android:text="@string/B"
+            android:text="@string/MauriBotticino"
             android:padding="3dip" />
 
         <EditText
@@ -62,7 +66,8 @@
             android:layout_alignLeft="@+id/txtNumber1"
             android:ems="2"
             android:inputType="number"
-            android:text="3"/>
+            android:text="@string/_2"
+            android:labelFor="@string/_2"/>
 
         <EditText
             android:id="@+id/txt2"
@@ -73,13 +78,14 @@
             android:ems="2"
             android:inputType="number"
             android:text="45°32'25.1&quot;N 10°19'02.5&quot;E"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:labelFor="@string/coordinate"/>
 
     </TableRow>
 
     <TableRow>
         <TextView
-            android:text="@string/C"
+            android:text="@string/UgoSamson"
             android:padding="3dip" />
 
         <EditText
@@ -90,7 +96,8 @@
             android:layout_alignLeft="@+id/txtNumber1"
             android:ems="2"
             android:inputType="number"
-            android:text="3"/>
+            android:text="@string/_1"
+            android:labelFor="@string/_1"/>
 
         <EditText
             android:id="@+id/txt3"
@@ -101,7 +108,8 @@
             android:ems="2"
             android:inputType="number"
             android:text="45°31'50.0&quot;N 10°15'30.1&quot;E"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:labelFor="@string/coordinate"/>
 
     </TableRow>
 

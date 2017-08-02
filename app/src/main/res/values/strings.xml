@@ -10,8 +10,14 @@
     <string name="D">D</string>
     <string name="E">E</string>
     <string name="F">F</string>
+    <string name="Falcone">Casa Falcone</string>
+    <string name="UgoSamson">Ugo via Samson</string>
+    <string name="MauriBotticino">Maurizio Botticino</string>
     <string name="luogo">luogo</string>
     <string name="presenze">presenze (peso)</string>
     <string name="coordinate">coord. NS/EW</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
     <string name="_5">5</string>
+    <string name="addendo">addendo</string>
 </resources>

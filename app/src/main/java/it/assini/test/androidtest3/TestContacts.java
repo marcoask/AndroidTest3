@@ -24,28 +24,8 @@ public class TestContacts extends Activity {
                 if (Integer.parseInt(cur.getString(cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
                     //Query phone here.  Covered next
                 }
-
-
-/**
-                String poBox = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.POBOX));
-                String street = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.STREET));
-                String city = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.CITY));
-                String state = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.REGION));
-                String postalCode = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.POSTCODE));
-                String country = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.COUNTRY));
-                String type = cur.getString(
-                        cur.getColumnIndex(ContactsContract.CommonDataKinds.StructuredPostal.TYPE));
-
- */
             }
-
-            //cur.close();
         }
+        cur.close();
     }
 }

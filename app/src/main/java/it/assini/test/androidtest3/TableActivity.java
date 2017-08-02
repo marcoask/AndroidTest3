@@ -22,19 +22,19 @@ public class TableActivity extends AppCompatActivity {
     //EditText peso2;
     //EditText txt2;
 
-    TextView txtResult;
+    private TextView txtResult;
 
-    Button btnCalcola;
-    TableLayout tl;
+    private Button btnCalcola;
+    private TableLayout tl;
 
     //double peso1_double, txt1_double, peso2_double, txt2_double,sum;
     //String txt1_string, txt2_string;
-    String result;
+    private String result;
 
-    ArrayList<String> latLngArrayList = new ArrayList<>();
-    ArrayList<String> nomiArrayList = new ArrayList<>();
-    double decNS_pesato;
-    double decEW_pesato;
+    private final ArrayList<String> latLngArrayList = new ArrayList<>();
+    private final ArrayList<String> nomiArrayList = new ArrayList<>();
+    private double decNS_pesato;
+    private double decEW_pesato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,7 +179,7 @@ public class TableActivity extends AppCompatActivity {
 
     }
 
-    public static double round(double value, int places) {
+    private static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         long factor = (long) Math.pow(10, places);
